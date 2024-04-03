@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\InventoryScope;
 use App\Traits\ModelAttributeTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -25,5 +26,10 @@ class Inventory extends Model
     {
         parent::boot();
         self::bootCreatedUpdatedBy();
+    }
+
+    protected static function booted()
+    {
+        static::addGlobalScope(new InventoryScope);
     }
 }

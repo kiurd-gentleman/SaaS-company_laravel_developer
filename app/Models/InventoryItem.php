@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\InventoryItemScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,5 +25,10 @@ class InventoryItem extends Model
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
+    }
+
+    protected static function booted()
+    {
+        static::addGlobalScope(new InventoryItemScope());
     }
 }

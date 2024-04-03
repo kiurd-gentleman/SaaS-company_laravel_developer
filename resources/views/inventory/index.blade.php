@@ -15,8 +15,8 @@
         <tbody>
         @foreach($inventories as $key => $inventory)
             <tr>
-                <th scope="row">{{ $key }}</th>
-                <td>{{ $inventory->name }}</td>
+                <th scope="row">{{ $key+1 }}</th>
+                <td>{{ $inventory->title }}</td>
                 <td>{{ $inventory->description}}</td>
                 <td>{{ $inventory->created_at }}</td>
                 <td>

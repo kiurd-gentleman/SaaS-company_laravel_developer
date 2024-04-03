@@ -18,8 +18,8 @@
         @foreach($inventoryItems as $key => $inventoryItem)
             <tr>
                 <th scope="row">{{ $key }}</th>
-                <td>{{ $inventoryItem->name }}</td>
-                <td>{{ $inventoryItem->description}}</td>
+                <td>{{ $inventoryItem->title }}</td>
+                <td>{{ $inventoryItem->description ?? ''}}</td>
                 <td>{{ $inventoryItem->inventory->title}}</td>
                 <td>{{ $inventoryItem->inventory->quantity}}</td>
                 <td>{{ $inventoryItem->created_at }}</td>
